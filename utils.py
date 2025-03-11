@@ -4,6 +4,45 @@ import os
 import subprocess
 import tempfile
 
+def initialize_session():
+    
+    if "visibility" not in st.session_state:
+        st.session_state.visibility = "visible"
+        st.session_state.disabled = False
+
+    if "assistant" not in st.session_state:
+        st.session_state.assistant = None
+    
+    if "file_uploader" not in st.session_state:
+        st.session_state.file_uploader = []
+
+    if "llm_model" not in st.session_state:
+        st.session_state.llm_model = "deepseek-r1:latest"
+
+    if "embedding_model" not in st.session_state:
+        st.session_state.embedding_model = "mxbai-embed-large"
+
+    if "dimensions" not in st.session_state:
+        st.session_state.dimensions = 1024
+
+    if "is_local" not in st.session_state:
+        st.session_state.is_local = True
+        
+    if "openai_api_key" not in st.session_state:
+        st.session_state.openai_api_key = ""
+
+    if "gemini_api_key" not in st.session_state:
+        st.session_state.gemini_api_key = ""
+        
+    if "ingestion_spinner" not in st.session_state:
+        st.session_state.ingestion_spinner = st.empty()
+
+    if "chat_history" not in st.session_state:
+        st.session_state.chat_history = []
+
+    if "llm_option" not in st.session_state:
+        st.session_state.llm_option = ""
+        
 def clear_chat():
     st.session_state.chat_history = []
     st.rerun()

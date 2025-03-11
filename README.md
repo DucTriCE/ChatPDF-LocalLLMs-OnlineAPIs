@@ -1,4 +1,4 @@
-# Local ChatPDF with Local Ollama Models / Online LLM APIs
+# Local RAG-based ChatPDF with Ollama Models / Online LLM APIs
 
 **ChatPDF** is a Retrieval-Augmented Generation (RAG) application that allows users to upload PDF documents and interact with them through a chatbot interface. The system uses advanced embedding models and a local vector store for efficient and accurate question-answering.
 
@@ -15,7 +15,6 @@ This project is inspired by [chatpdf-rag-deepseek-r1](https://github.com/paquino
 ## User Interface
 
 <img src="image/ui.png" alt="User Interface" width="1920"/>
----
 
 ## Installation
 
@@ -30,7 +29,7 @@ cd ChatPDF-LocalLLMs-OnlineAPIs
 
 ### 2. Install Docker
 
-Make sure Docker and Docker Compose is installed on your system. You can follow the instructions [here](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04) (This tutorial is for Ubuntu 20.04, you can find different tutorial based on your system).
+Make sure Docker and Docker Compose are installed on your system. You can follow the instructions [here](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04) (This tutorial is for Ubuntu 20.04, you can find different tutorial based on your system).
 
 ### 3. Build and Run the Docker Container
 
@@ -84,6 +83,7 @@ For GPT or Gemini models, you must specify their API key in the provided input f
 
 | Model Name | Identifier | Embedding Model | Dimensions |
 |------------|------------|----------------|------------|
+| GPT-4o  | `chatgpt-4o-latest` | `text-embedding-3-large` | 3072 |
 | GPT-4o Mini | `gpt-4o-mini` | `text-embedding-3-large` | 3072 |
 | Gemini 2.0 Flash | `gemini-2.0-flash-exp` | `text-embedding-004` | 768 |
 | Gemini 1.5 Pro | `gemini-1.5-pro` | `text-embedding-004` | 768 |

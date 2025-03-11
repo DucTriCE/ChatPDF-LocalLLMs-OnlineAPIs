@@ -21,6 +21,11 @@ OLLAMA_MODELS = {
 }
 
 ONLINE_MODELS = {
+    "GPT-4o": {
+        "llm_model": "chatgpt-4o-latest",
+        "embedding_model": "text-embedding-3-large",
+        "dimensions": 3072
+    },
     "GPT-4o Mini": {
         "llm_model": "gpt-4o-mini",
         "embedding_model": "text-embedding-3-large",

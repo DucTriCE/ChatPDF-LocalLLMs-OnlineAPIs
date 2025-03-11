@@ -3,53 +3,16 @@ import time
 import streamlit as st
 from rag import ChatPDF
 from config import OLLAMA_MODELS, ONLINE_MODELS
-from utils import clear_chat, read_and_save_file, chat
+from utils import clear_chat, read_and_save_file, chat, initialize_session
 
 st.set_page_config(page_title="RAG with Local Ollama Models / Online API")
 
 
 def page():
     """Main app page layout."""       
-
-    if "visibility" not in st.session_state:
-        st.session_state.visibility = "visible"
-        st.session_state.disabled = False
-
-    if "assistant" not in st.session_state:
-        st.session_state.assistant = None
-    
-    if "file_uploader" not in st.session_state:
-        st.session_state.file_uploader = []
-
-    if "llm_model" not in st.session_state:
-        st.session_state.llm_model = "deepseek-r1:latest"
-
-    if "embedding_model" not in st.session_state:
-        st.session_state.embedding_model = "mxbai-embed-large"
-
-    if "dimensions" not in st.session_state:
-        st.session_state.dimensions = 1024
-
-    if "is_local" not in st.session_state:
-        st.session_state.is_local = True
-        
-    if "openai_api_key" not in st.session_state:
-        st.session_state.openai_api_key = ""
-
-    if "gemini_api_key" not in st.session_state:
-        st.session_state.gemini_api_key = ""
-        
-    if "ingestion_spinner" not in st.session_state:
-        st.session_state.ingestion_spinner = st.empty()
-
-    if "chat_history" not in st.session_state:
-        st.session_state.chat_history = []
-
-    if "llm_option" not in st.session_state:
-        st.session_state.llm_option = ""
-
     st.header("RAG with Local Ollama Models / Online LLMs API")
-
+    
+    initialize_session()
     chat()
 
     with st.sidebar:
