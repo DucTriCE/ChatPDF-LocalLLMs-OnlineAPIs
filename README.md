@@ -36,12 +36,12 @@ Make sure Docker and Docker Compose are installed on your system. You can follow
 Build the Docker image and run the container using Docker Compose:
 
 ```bash
-docker-compose up --build
+docker compose up --build
 ```
 If already built, just run the application using the following command:
 
 ```bash
-docker-compose up
+docker compose up
 ```
 
 ## Usage
